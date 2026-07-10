@@ -4,6 +4,8 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-07-11
+
 ### Added
 
 - Command-line interface with dry-run, ordering, and delay controls.
@@ -17,4 +19,5 @@ All notable changes to this project are documented here. The format follows [Kee
 - Publishing failures now return a non-zero exit code instead of being silently ignored.
 - The webhook URL and Discord response body are no longer printed.
 
-[Unreleased]: https://github.com/egore4606/Discord-link-publisher/compare/Release...HEAD
+[Unreleased]: https://github.com/egore4606/Discord-link-publisher/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/egore4606/Discord-link-publisher/compare/Release...v2.0.0
