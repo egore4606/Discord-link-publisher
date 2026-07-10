@@ -1,0 +1,54 @@
+name: Pull request labels
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  paths:
+    name: Label changed areas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v5
+
+  size:
+    name: Label pull request size
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: files } = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              per_page: 100,
+            });
+            const changed = files.reduce((sum, file) => sum + file.changes, 0);
+            const sizes = [
+              [20, 'size: XS'], [80, 'size: S'], [250, 'size: M'],
+              [500, 'size: L'], [1000, 'size: XL'], [Infinity, 'size: XXL'],
+            ];
+            const selected = sizes.find(([limit]) => changed <= limit)[1];
+            const all = sizes.map(([, name]) => name);
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number,
+            });
+            const remove = issue.data.labels
+              .map(label => typeof label === 'string' ? label : label.name)
+              .filter(name => all.includes(name) && name !== selected);
+            for (const name of remove) {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, name,
+              });
+            }
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number, labels: [selected],
+            });

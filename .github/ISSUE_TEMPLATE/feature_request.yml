@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest a focused improvement
+title: "[Feature]: "
+labels: ["type: enhancement", "status: needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What becomes easier or safer for users?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: This request preserves the project's small, one-shot CLI scope.
+          required: true
+        - label: I did not include webhook URLs, tokens, or private Discord content.
+          required: true
