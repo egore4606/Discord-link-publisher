@@ -1,0 +1,12 @@
+"area: python":
+  - changed-files:
+      - any-glob-to-any-file: ["main.py", "pyproject.toml", "tests/**"]
+"area: documentation":
+  - changed-files:
+      - any-glob-to-any-file: ["**/*.md", "docs/**"]
+"area: automation":
+  - changed-files:
+      - any-glob-to-any-file: [".github/**"]
+"area: security":
+  - changed-files:
+      - any-glob-to-any-file: ["SECURITY.md", ".github/workflows/codeql.yml", ".github/workflows/dependency-review.yml"]

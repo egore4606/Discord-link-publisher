@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Discord Link Publisher</title>
+  <desc id="desc">Links moving from a text document into Discord</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="420" rx="36" fill="url(#bg)"/>
+  <circle cx="1030" cy="40" r="210" fill="#5865f2" opacity=".14"/>
+  <circle cx="90" cy="420" r="220" fill="#60a5fa" opacity=".10"/>
+  <g filter="url(#shadow)">
+    <rect x="110" y="88" width="250" height="244" rx="22" fill="#f8fafc"/>
+    <rect x="142" y="125" width="150" height="13" rx="6" fill="#94a3b8"/>
+    <rect x="142" y="169" width="185" height="13" rx="6" fill="#60a5fa"/>
+    <rect x="142" y="210" width="157" height="13" rx="6" fill="#60a5fa"/>
+    <rect x="142" y="251" width="175" height="13" rx="6" fill="#60a5fa"/>
+    <path d="M332 88v52h-52" fill="#e2e8f0"/>
+  </g>
+  <g fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round">
+    <path d="M400 170h108"/>
+    <path d="m481 138 33 32-33 32"/>
+    <path d="M400 250h108" opacity=".65"/>
+    <path d="m481 218 33 32-33 32" opacity=".65"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="558" y="78" width="520" height="264" rx="30" fill="#5865f2"/>
+    <path d="M719 151c58-24 140-24 198 0 17 27 28 57 34 87-24 18-48 29-72 36l-17-23c10-4 20-9 29-15-55 25-115 25-146 0 9 6 19 11 29 15l-17 23c-24-7-48-18-72-36 6-30 17-60 34-87Z" fill="#fff"/>
+    <circle cx="780" cy="207" r="17" fill="#5865f2"/>
+    <circle cx="857" cy="207" r="17" fill="#5865f2"/>
+  </g>
+  <text x="600" y="386" fill="#fff" font-family="Inter,Segoe UI,sans-serif" font-size="42" font-weight="700">Discord Link Publisher</text>
+</svg>
